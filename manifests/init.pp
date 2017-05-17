@@ -24,11 +24,11 @@
 #
 # === Authors
 #
-# Alex Rodionov <p0deje@gmail.com>
+# Larry Titus <ltitus210@me.com>
 #
 # === Copyright
 #
-# Copyright 2013 Alex Rodionov.
+# Copyright 2017 Larry Titus.
 #
 class display(
   $display = 0,
@@ -36,9 +36,9 @@ class display(
   $height  = 768,
   $color   = '24+32'
 ) inherits display::params {
-  include env
-  include x11vnc
-  include xvfb
+  contain display::env
+  contain display::x11vnc
+  contain display::xvfb
 
-  Class['xvfb'] -> Class['x11vnc'] -> Class['env']
+  Class['::display::xvfb'] -> Class['::display::x11vnc'] -> Class['::display::env']
 }
