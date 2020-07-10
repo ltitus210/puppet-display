@@ -1,3 +1,5 @@
+# This repo has moved to: https://gitlab.greenpeace.org/gp/git/core-services/puppet/puppet-display
+
 ## puppet-display
 
 Module allows to connect to remote machine display using x11vnc + Xvfb.
